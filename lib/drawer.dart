@@ -120,13 +120,6 @@ class _MyDrawerState extends State<MyDrawer> {
                     color: Colors.white60,
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.only(left: 30),
-                  child: Text(
-                    "Favorite",
-                    style: TextStyle(color: Colors.white60, fontSize: 20),
-                  ),
-                ),
               ],
             ),
           ),

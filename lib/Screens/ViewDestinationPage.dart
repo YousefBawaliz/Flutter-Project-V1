@@ -1,5 +1,8 @@
-import 'package:flutter/material.dart';
+import 'dart:js_util';
 
+import 'package:flutter/material.dart';
+import 'package:favorite_button/favorite_button.dart';
+import 'package:myapp/Models/Site.dart';
 import '../Models/Destinations.dart';
 
 class DestinationPage extends StatefulWidget {
@@ -13,6 +16,7 @@ class DestinationPage extends StatefulWidget {
 class _DestinationPageState extends State<DestinationPage> {
   List<bool> expanded = [false, false, false, false];
   SiteStorage mysiteStorage = SiteStorage();
+  int FavoriteCount = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +25,26 @@ class _DestinationPageState extends State<DestinationPage> {
         actions: [
           Row(
             children: [
-              Icon(Icons.favorite),
+              FavoriteButton(
+                  isFavorite: false,
+                  iconSize: 40,
+                  valueChanged: (_isFavorite) {
+                    setState(() {
+                      if (_isFavorite) {
+                        FavoriteCount += 1;
+                        _isFavorite = false;
+                      } else {
+                        FavoriteCount -= 1;
+                        _isFavorite = true;
+                      }
+                    });
+                  }),
+              SizedBox(
+                width: 20,
+                child: SizedBox(
+                  child: Text('$FavoriteCount'),
+                ),
+              ),
               SizedBox(
                 width: 20,
               ),

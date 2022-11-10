@@ -116,29 +116,6 @@ class _MyDrawerState extends State<MyDrawer> {
                 Container(
                   margin: EdgeInsets.only(left: 20),
                   child: Icon(
-                    Icons.favorite,
-                    color: Colors.white60,
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(left: 30),
-                  child: Text(
-                    "Favorite",
-                    style: TextStyle(color: Colors.white60, fontSize: 20),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 30,
-          ),
-          GestureDetector(
-            child: Row(
-              children: [
-                Container(
-                  margin: EdgeInsets.only(left: 20),
-                  child: Icon(
                     Icons.mobile_screen_share,
                     color: Colors.white60,
                   ),
